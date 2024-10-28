@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="PrivacyMind: Large Language Models Can Be Contextual Privacy Protection Learners">
+  <meta name="keywords" content="Privacy, Large Language Models, PrivacyMind, Data Protection">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PrivacyMind: Large Language Models Can Be Contextual Privacy Protection Learners</title>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <!-- <link rel="icon" href="./static/images/favicon.svg"> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://yijia-xiao.github.io/">
+        <span class="icon">
+          <i class="fas fa-home"></i>
+        </span>
+      </a>
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">More Research</a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://arxiv.org/abs/2408.11363">ProteinGPT</a>
+          <a class="navbar-item" href="https://arxiv.org/abs/2310.02469">PrivacyMind</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">PrivacyMind: Large Language Models Can Be Contextual Privacy Protection Learners</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Yijia Xiao<sup>1*</sup>,</span>
+            <span class="author-block">Yiqiao Jin<sup>2</sup>,</span>
+            <span class="author-block">Yushi Bai<sup>3</sup>,</span>
+            <span class="author-block">Yue Wu<sup>1</sup>,</span>
+            <span class="author-block">Xianjun Yang<sup>4</sup>,</span>
+            <span class="author-block">Xiao Luo<sup>1</sup>,</span>
+            <span class="author-block">Wenchao Yu<sup>5</sup>,</span>
+            <span class="author-block">Xujiang Zhao<sup>5</sup>,</span>
+            <span class="author-block">Yanchi Liu<sup>5</sup>,</span>
+            <span class="author-block">Quanquan Gu<sup>1</sup>,</span>
+            <span class="author-block">Haifeng Chen<sup>5</sup>,</span>
+            <span class="author-block">Wei Wang<sup>1</sup>,</span>
+            <span class="author-block">Wei Cheng<sup>5</sup></span>
+          </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>University of California, Los Angeles,</span>
+            <span class="author-block"><sup>2</sup>Georgia Institute of Technology,</span>
+            <span class="author-block"><sup>3</sup>Tsinghua University,</span>
+            <span class="author-block"><sup>4</sup>University of California, Santa Barbara,</span>
+            <span class="author-block"><sup>5</sup>NEC Laboratories America</span>
+          </div>
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block"><a href="https://arxiv.org/abs/2310.02469" class="external-link button is-normal is-rounded is-dark"><span class="icon"><i class="fas fa-file-pdf"></i></span><span>Paper</span></a></span>
+              <span class="link-block"><a href="https://github.com/Yijia-Xiao/PrivacyMind" class="external-link button is-normal is-rounded is-dark"><span class="icon"><i class="fab fa-github"></i></span><span>Code</span></a></span>
+              <span class="link-block"><a href="https://PrivacyMind.github.io/" class="external-link button is-normal is-rounded is-dark"><span class="icon"><i class="far fa-window-maximize"></i></span><span>Website</span></a></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>The proliferation of Large Language Models (LLMs) has driven considerable interest in fine-tuning them with domain-specific data to create specialized language models. 
+            Nevertheless, such domain-specific fine-tuning data often contains <em>contextually sensitive</em> personally identifiable information (PII). 
+            Direct fine-tuning of LLMs on this data without privacy protection poses a risk of data leakage of sensitive PII during inference time.</p>
+          <p>To address this challenge, we introduce <u>Contextual Privacy Protection Language Models</u> (<strong>PrivacyMind</strong>), a novel paradigm for fine-tuning LLMs that effectively injects domain-specific knowledge while safeguarding inference-time data privacy.</p>
+          <p>Our work offers a theoretical analysis for model design and benchmarks various techniques such as corpus curation, penalty-based unlikelihood in training loss, and instruction-based tuning. Extensive experiments across diverse datasets and scenarios demonstrate the effectiveness of our approaches. In particular, instruction tuning with both positive and negative examples stands out as a promising method, effectively protecting private data while enhancing the model's knowledge.</p>
+          <p>Our work underscores the potential for Large Language Models as robust contextual privacy protection learners. The complete code and data for the work can be found at 
+            <a href="https://github.com/Yijia-Xiao/PrivacyMind" target="_blank">https://github.com/Yijia-Xiao/PrivacyMind</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Overview</h2>
+        <p><strong>PrivacyMind</strong> provides a novel approach to fine-tuning LLMs for contextual privacy protection, combining methods like corpus curation, penalty-based loss, and instruction-based tuning. It balances privacy and model performance, allowing LLMs to retain domain-specific knowledge while protecting sensitive information—ideal for privacy-sensitive fields like healthcare and finance.</p>
+
+        <p><strong>Penalty-Based Loss</strong> Adds constraints to suppress PII generation, using unigram and bigram penalties to selectively forget sensitive information.</p>
+        <p><strong>PII Classifier</strong> A lightweight, context-sensitive classifier that identifies PII tokens in real-time without altering core model outputs, enhancing privacy without quality loss.</p>
+
+        <div class="column is-10 has-text-centered">
+          <img src="./static/images/instruction.png" alt="Overview of PrivacyMind" />
+          <p>Figure: Overview of PrivacyMind's Instruction Tuning Approach</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Baselines</h2>
+        <!-- <h3 class="title is-4">Novel Methodology</h3> -->
+        <p>PrivacyMind introduces Contextual Privacy Protection Language Models (CPPLM), addressing the challenge of incorporating domain knowledge while emphasizing privacy protection for contextually sensitive PII.</p>
+        <br>
+        <p><strong>Vanilla Tuning:</strong> Involves using explicit prompts to guide LLMs to avoid generating personally identifiable information (PII), thereby enhancing privacy protection.</p>
+
+        <div class="column is-10 has-text-centered">
+          <img src="./static/images/vanilla.png" alt="Vanilla" />
+          <p>Figure: Vanilla Tuning of LLM</p>
+        </div>
+
+        <p><strong>PII Removal:</strong> Ensures no access to sensitive data during training, but may lead to sentence incoherence.</p>
+        <p><strong>PII Substitution:</strong> Uses tokens like ⟨NAME⟩ to maintain structure, balancing privacy and sentence coherence.</p>
+
+        <div class="column is-10 has-text-centered">
+          <img src="./static/images/corpus.png" alt="Corpus" />
+          <p>Figure: Corpus Curation in PrivacyMind</p>
+        </div>
+        <!-- <h3 class="title is-4">Corpus Curation</h3> -->
+        <!-- <ul> -->
+        <!-- </ul> -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Results</h2>
+        <h3 class="title is-4">Effectiveness of PrivacyMind's Approach</h3>
+        <ul>
+          <li><strong>Performance Metrics:</strong> Achieved high scores on ROUGE-1, ROUGE-2, ROUGE-L, and BERTScore for answer quality and SPriv for privacy leakage.</li>
+          <li><strong>Utility-Privacy Balance:</strong> Instruction-based tuning consistently achieved optimal trade-offs between utility and privacy.</li>
+        </ul>
+
+        <!-- Table 1: PQA Dataset Results -->
+        <table class="table is-striped is-fullwidth">
+          <caption>Results on our <em><strong>PQA</strong></em> Dataset</caption>
+          <thead>
+            <tr>
+              <th>Strategy</th>
+              <th>ROUGE-1</th>
+              <th>ROUGE-2</th>
+              <th>ROUGE-L</th>
+              <th>BERTScore</th>
+              <th>S<sub>priv:Name</sub></th>
+              <th>&Delta;<sub>Name</sub></th>
+              <th>S<sub>priv:Email</sub></th>
+              <th>&Delta;<sub>Email</sub></th>
+              <th>S<sub>priv:Address</sub></th>
+              <th>&Delta;<sub>Address</sub></th>
+              <th>S<sub>priv:SSN</sub></th>
+              <th>&Delta;<sub>SSN</sub></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Vanilla</td><td>0.637</td><td><u>0.5743</u></td><td>0.6235</td><td><strong>0.8699</strong></td><td>0.0778</td><td>-</td><td>0.0752</td><td>-</td><td>0.0782</td><td>-</td><td>0.0724</td><td>-</td></tr>
+            <tr><td>Removal</td><td>0.6148</td><td>0.5575</td><td>0.6115</td><td>0.8390</td><td>0.0410</td><td>-47.30%</td><td><strong>0.0394</strong></td><td><strong>-47.61%</strong></td><td>0.0423</td><td>-45.91%</td><td>0.0419</td><td>-42.13%</td></tr>
+            <tr><td>Substitution</td><td>0.6291</td><td>0.5234</td><td>0.6217</td><td>0.8576</td><td>0.0420</td><td>-46.02%</td><td>0.0418</td><td>-44.41%</td><td>0.0446</td><td>-42.97%</td><td>0.0419</td><td>-42.13%</td></tr>
+            <tr><td>IT</td><td><u>0.6395</u></td><td>0.5429</td><td><u>0.6253</u></td><td>0.8686</td><td>0.0449</td><td>-42.29%</td><td>0.0418</td><td>-44.41%</td><td>0.0449</td><td>-42.58%</td><td>0.0421</td><td>-41.85%</td></tr>
+            <tr><td>IT<sub>PN1</sub></td><td><strong>0.6497</strong></td><td>0.5591</td><td><strong>0.6346</strong></td><td><u>0.8696</u></td><td><strong>0.0395</strong></td><td><strong>-49.23%</strong></td><td><u>0.0397</u></td><td><u>-47.21%</u></td><td><strong>0.0419</strong></td><td><strong>-46.42%</strong></td><td><strong>0.0411</strong></td><td><strong>-43.23%</strong></td></tr>
+            <tr><td>IT<sub>PN2</sub></td><td>0.6324</td><td>0.5569</td><td>0.6222</td><td>0.869</td><td><u>0.0404</u></td><td><u>-48.07%</u></td><td>0.0403</td><td>-46.41%</td><td><u>0.0421</u></td><td><u>-46.16%</u></td><td><u>0.0413</u></td><td><u>-42.96%</u></td></tr>
+            <tr><td>IT<sub>NP1</sub></td><td>0.6321</td><td>0.5740</td><td>0.6234</td><td>0.8605</td><td>0.0411</td><td>-47.17%</td><td>0.0412</td><td>-45.21%</td><td>0.0431</td><td>-44.88%</td><td>0.0414</td><td>-42.82%</td></tr>
+            <tr><td>IT<sub>NP2</sub></td><td>0.6335</td><td><strong>0.5761</strong></td><td>0.6201</td><td>0.8657</td><td>0.0406</td><td>-47.81%</td><td>0.0408</td><td>-45.74%</td><td>0.0412</td><td>-47.31%</td><td>0.0416</td><td>-42.54%</td></tr>
+          </tbody>
+        </table>
+
+
+
+        <h3 class="title is-4">Privacy and Performance Comparison on PQA Dataset</h3>
+        <p>Further evaluation highlights PrivacyMind's privacy-preserving performance across sensitive categories, including names, emails, addresses, and SSNs.</p>
+        
+        <!-- Table 2: Performance and Privacy Metrics Comparison -->
+        <table class="table is-striped is-fullwidth">
+          <caption>Performance and Privacy Metrics Comparison on the <em><strong>PQA</strong></em> Dataset</caption>
+          <thead>
+            <tr>
+              <th>Strategy</th>
+              <th>ROUGE-1</th>
+              <th>ROUGE-2</th>
+              <th>ROUGE-L</th>
+              <th>BERTScore</th>
+              <th>S<sub>priv:Name</sub></th>
+              <th>&Delta;<sub>Name</sub></th>
+              <th>S<sub>priv:Email</sub></th>
+              <th>&Delta;<sub>Email</sub></th>
+              <th>S<sub>priv:Address</sub></th>
+              <th>&Delta;<sub>Address</sub></th>
+              <th>S<sub>priv:SSN</sub></th>
+              <th>&Delta;<sub>SSN</sub></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Vanilla</td><td>0.3342</td><td>0.2174</td><td>0.3297</td><td>0.8162</td><td>0.1082</td><td>-</td><td>0.1024</td><td>-</td><td>0.1103</td><td>-</td><td>0.0992</td><td>-</td></tr>
+            <tr><td>Removal</td><td>0.2947</td><td>0.2071</td><td>0.3092</td><td>0.7983</td><td>0.0558</td><td>-48.43%</td><td>0.0536</td><td>-47.66%</td><td>0.0573</td><td>-48.05%</td><td>0.0568</td><td>-42.75%</td></tr>
+            <tr><td>Substitution</td><td>0.2983</td><td>0.2073</td><td>0.3173</td><td>0.8012</td><td>0.0572</td><td>-47.13%</td><td>0.0569</td><td>-44.43%</td><td>0.0586</td><td>-46.87%</td><td>0.0568</td><td>-42.75%</td></tr>
+            <tr><td>Private Transformer</td><td>0.3172</td><td>0.2096</td><td>0.3192</td><td><u>0.8119</u></td><td><u>0.0551</u></td><td><u>-49.08%</u></td><td>0.0554</td><td>-45.90%</td><td><u>0.0572</u></td><td><u>-48.14%</u></td><td><u>0.0569</u></td><td><u>-42.65%</u></td></tr>
+            <tr><td>IT_PN</td><td><strong>0.3273</strong></td><td><u>0.2112</u></td><td><u>0.3221</u></td><td>0.8101</td><td><strong>0.0549</strong></td><td><strong>-49.26%</strong></td><td><u>0.0551</u></td><td><u>-46.19%</u></td><td><strong>0.0570</strong></td><td><strong>-48.32%</strong></td><td>0.0570</td><td>-42.55%</td></tr>
+            <tr><td>IT_NP</td><td><u>0.3261</u></td><td><strong>0.2162</strong></td><td><strong>0.3252</strong></td><td><strong>0.8132</strong></td><td>0.0563</td><td>-47.97%</td><td>0.0561</td><td>-45.21%</td><td>0.0575</td><td>-47.87%</td><td>0.0573</td><td>-42.24%</td></tr>
+          </tbody>
+        </table>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Analysis</h2>
+        <p>In this section, we analyze ROUGE, BERTScore, and Privacy Leakage Score with respect to training steps to assess the effectiveness of our primary learning objectives.</p>
+        
+        <!-- Row 1: First Pair of Images -->
+        <div class="columns is-centered">
+          <!-- Left Image: Training Metrics Analysis for ITP N1 -->
+          <div class="column is-half has-text-centered">
+            <img src="./static/images/original_metrics_score.png" alt="Training Metrics Analysis for ITP N1" />
+            <p><strong>Training Metrics Analysis for ITP N1</strong></p>
+            <p>ROUGE and BERTScore steadily rise, showing knowledge injection, while Privacy Leakage initially increases but declines as the model learns privacy protection.</p>
+          </div>
+          
+          <!-- Right Image: Privacy Score Evolution During Training -->
+          <div class="column is-half has-text-centered">
+            <img src="./static/images/original_priv_score.png" alt="Privacy Score Evolution During Training" />
+            <p><strong>Privacy Score Evolution During Training</strong></p>
+            <p>Privacy leakage decreases as privacy-preserving instructions are applied, balancing data protection with utility.</p>
+          </div>
+        </div>
+
+        <!-- Row 2: Second Pair of Images -->
+        <div class="columns is-centered">
+          <!-- Left Image: Vanilla vs. Instruction Tuning Comparison -->
+          <div class="column is-half has-text-centered">
+            <img src="./static/images/NP_metrics_score.png" alt="Vanilla vs. Instruction Tuning Comparison" />
+            <p><strong>Vanilla vs. Instruction Tuning Comparison</strong></p>
+            <p>Vanilla tuning shows increasing privacy leakage with training, while instruction tuning reduces leakage over time, maintaining similar utility.</p>
+          </div>
+          
+          <!-- Right Image: Privacy Protection Across Specific PII Types -->
+          <div class="column is-half has-text-centered">
+            <img src="./static/images/NP_priv_score.png" alt="Privacy Protection Across Specific PII Types" />
+            <p><strong>Privacy Protection Across Specific PII Types</strong></p>
+            <p>Effective protection across various PII types (e.g., Names, Emails, Addresses, SSNs), demonstrating robust privacy preservation.</p>
+          </div>
+        </div>
+
+        <!-- Row 3: Pareto Analysis for Wikidoc Patient Information -->
+        <div class="columns is-centered">
+          <!-- Left Image: Pareto Analysis on LLama 7B -->
+          <div class="column is-half has-text-centered">
+            <img src="./static/images/wikidoc_patient_information_7b.png" alt="Pareto Analysis on Wikidoc Patient Information - LLama 7B" />
+            <p><strong>Pareto Analysis on Wikidoc Patient Information - LLama 7B</strong></p>
+            <p>Analyzes utility vs. privacy trade-offs on the 7B model, highlighting optimal configurations for privacy and performance.</p>
+          </div>
+          
+          <!-- Right Image: Pareto Analysis on LLama 13B -->
+          <div class="column is-half has-text-centered">
+            <img src="./static/images/wikidoc_patient_information_13b.png" alt="Pareto Analysis on Wikidoc Patient Information - LLama 13B" />
+            <p><strong>Pareto Analysis on Wikidoc Patient Information - LLama 13B</strong></p>
+            <p>Explores trade-offs on the 13B model, showing configurations that balance privacy protection with enhanced utility.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Conclusion</h2>
+        <p><strong>Significance:</strong> PrivacyMind represents a pivotal advancement in LLM privacy protection, highlighting that contextual privacy awareness can be effectively learned and implemented.</p>
+        <p><strong>Call to Action:</strong> We encourage researchers and developers to adopt and refine PrivacyMind methodologies, contributing to responsible LLM usage in privacy-sensitive domains.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link" href="https://arxiv.org/abs/2310.02469"><i class="fas fa-file-pdf"></i></a>
+      <a class="icon-link" href="https://github.com/Yijia-Xiao/PrivacyMind"><i class="fab fa-github"></i></a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
